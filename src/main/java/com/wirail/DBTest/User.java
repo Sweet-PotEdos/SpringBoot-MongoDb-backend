@@ -23,6 +23,14 @@ public class User {
         this.id = id;
     }
 
+    public void setPassword(String pssw){
+        this.password = pssw;
+    }
+
+    public String getUsername(){
+        return this.username;
+    }
+
     public String getId(){
         return this.id;
     }

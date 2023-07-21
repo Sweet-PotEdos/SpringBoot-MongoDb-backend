@@ -4,6 +4,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
 public class DbTestApplication {
@@ -22,9 +23,15 @@ public class DbTestApplication {
 			// .getBody method is necessary because the user controller returns a ResponseEntity<User>
 			User usr1 = userController.createUser(new User("jhonnybravo", "coolpssw")).getBody();
 
+			//System.out.println(new BCryptPasswordEncoder().encode("randomstring"));
 			System.out.println(userController.getAllUsers().toString());
 
 		};
+	}
+
+	@Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder(){
+		return new BCryptPasswordEncoder();
 	}
 
 }
