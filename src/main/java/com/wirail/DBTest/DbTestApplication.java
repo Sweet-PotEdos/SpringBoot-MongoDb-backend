@@ -21,7 +21,7 @@ public class DbTestApplication {
 			System.out.println("start of the program ");
 
 			// .getBody method is necessary because the user controller returns a ResponseEntity<User>
-			User usr1 = userController.createUser(new User("jhonnybravo", "coolpssw")).getBody();
+			User usr1 = userController.createUser(new User("firstname", "lastname", "email", "password")).getBody();
 
 			//System.out.println(new BCryptPasswordEncoder().encode("randomstring"));
 			System.out.println(userController.getAllUsers().toString());
