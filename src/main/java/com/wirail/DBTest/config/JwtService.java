@@ -21,7 +21,7 @@ import io.jsonwebtoken.security.Keys;
 public class JwtService {
 
     //256 bit key, wich is the minimum for JWT token
-    private static final String SECRET_KEY = "i7919KLII1Edi75AUnVZDjhCyQMwjS8z";
+    private static final String SECRET_KEY = "XIZLSGnJcv+3yUoVg1XiWngCnF7HES0aGROgg+mS7SU7RsZnDnZUHhLuOMtWazD57hp/iv14tmzHWYCSutHtPkzJEHWq58etTTHyjXS8CSZq33YzyqHgZn+BgyLQPC5OJ3lEgGH/hM46RvnP9LjbXzhSMalL308eAon3yC2L2mPar0nERVPaO4QV2HudJ0ZOyUcrylj/1XRxuoiGmFbgDQSu8b1JJYXT2touP0rbxHjXFJOETVRAgnznsewH3LcssMmOLo5CoC4Bfv2+Y2mVOij40F2+GY1oGFRz+5nSrpqLWaomoqyr2aFVOzL2FoBkSfrmWAzHWo7Q15Wul6XgLKmSU2UNx1dk0UF3oykPD4A";
 
     //claims in JWT are encoded in a JSON object, wich is structured like: 
     //Header(alogrithm and token type) - Payload(data) - VerifySignature

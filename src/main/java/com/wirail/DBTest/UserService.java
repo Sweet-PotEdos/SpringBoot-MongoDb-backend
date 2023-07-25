@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -21,11 +22,13 @@ public class UserService {
 
     // Your business logic using the repository methods
 
-    public User createUser(User user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        System.out.println(user.getPassword());
-        return userRepository.save(user);
-    }
+    //THIS is useless now that we have implemented the real authentication
+
+    //public User createUser(User user) {
+    //    user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+    //    System.out.println(user.getPassword());
+    //    return userRepository.save(user);
+    //}
 
     public List<User> getAllUsers() {
         return userRepository.findAll();
@@ -33,6 +36,11 @@ public class UserService {
 
     public Optional<User> getUserById(String id) {
         return userRepository.findById(id);
+    }
+
+
+    public Optional<User> findByEmail(String email){
+        return userRepository.getUserByEmail(email);
     }
 
     public User updateUser(User updatedUser) {
